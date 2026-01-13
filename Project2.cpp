@@ -6,13 +6,13 @@
 
 using namespace std;
 
-/* ================= CONSTANT FILES ================= */
+/*  CONSTANT FILES  */
 const string MEMBER_FILE = "members.txt";
 const string PANEL_FILE = "panels.txt";
 const string EVENT_FILE = "events.txt";
 const string LOG_FILE = "log.txt";
 
-/* ================= LOGGER ================= */
+/*  LOGGER  */
 void logAction(const string &role, const string &action)
 {
     ofstream log(LOG_FILE, ios::app);
@@ -20,11 +20,11 @@ void logAction(const string &role, const string &action)
     log.close();
 }
 
-/* ================= ROLES & PASSWORDS ================= */
+/*  ROLES & PASSWORDS */
 string roles[] = {"President", "Advisor", "GS", "Executive", "Normal"};
 string passwords[] = {"pass123", "adv2026", "gs2026", "exec2026", "normal"};
 
-/* ================= AUTH ================= */
+/*  AUTH  */
 class Auth
 {
 public:
@@ -39,8 +39,7 @@ public:
         return role == "President" || role == "Advisor" || role == "GS";
     }
 };
-
-/* ================= MEMBER ================= */
+/* MEMBER  */
 class Member
 {
 public:
@@ -173,7 +172,7 @@ public:
     }
 };
 
-/* ================= PANEL ================= */
+/*  PANEL  */
 class Panel
 {
 public:
@@ -316,7 +315,7 @@ public:
     }
 };
 
-/* ================= EVENT ================= */
+/* EVENT  */
 class Event
 {
 public:
@@ -434,7 +433,7 @@ public:
     }
 };
 
-/* ================= ROLE SWITCH ================= */
+/*ROLE SWITCH*/
 void switchRole(string &currentRole)
 {
     int choice;
@@ -444,7 +443,7 @@ void switchRole(string &currentRole)
         cout << i + 1 << ". " << roles[i] << endl;
     }
 
-    cout << "Select role (1-5): ";
+    cout << "Welcome to BCC && Select role (1-5): ";
     cin >> choice;
 
     if (choice < 1 || choice > 5)
@@ -469,7 +468,7 @@ void switchRole(string &currentRole)
     }
 }
 
-/* ================= MAIN ================= */
+/*MAIN*/
 int main()
 {
     string role, pass;
@@ -548,7 +547,7 @@ int main()
             switchRole(role);
             break;
         case 11:
-            cout << "Goodbye!\n";
+            cout << "Thanks For Being With us!\n";
             break;
         default:
             cout << "Invalid choice.\n";
